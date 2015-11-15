@@ -1,0 +1,27 @@
+# Site settings
+title: "Ubik / Chap. 6"
+subtitle: Ubik / Chap. 6
+description: "Ubik, Chap. 6 is a proof of concept of Medlay, a hybrid media form concept."
+author: Andrea Buran
+exclude: ['README.md']
+
+#baseurl: http://ranbureand.github.io/medlay
+baseurl: /medlay
+
+timezone: Europe/Rome
+encoding: utf-8
+
+collections:
+  chapters:
+    output: true
+    name: "Banana"
+
+# Build settings
+markdown: kramdown
+
+# Markdown Processors
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 2..3

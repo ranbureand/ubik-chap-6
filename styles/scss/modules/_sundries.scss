@@ -1,0 +1,43 @@
+/* (c) 2015 Andrea Buran [www.andreaburan.com] All rights reserved */
+
+/*
+ * Sundries
+ */
+
+#playground {
+	position: relative;
+
+	width: $canvas-width + $canvas-safe-area*2;
+	height: $canvas-height + $canvas-safe-area*2;
+	.pieces {
+		position: relative;
+
+		width: $canvas-width;
+		height: $canvas-height;
+		margin: $canvas-safe-area;
+		.piece {
+			position: absolute;
+
+			margin: 0;
+		}
+	}
+}
+
+.header {
+	margin-top: rhythm($medium-line);
+	margin-left: em($gut);
+
+	@include adjust-font-size-to($medium-size, $medium-line);
+	h1 {
+		display: inline;
+	}
+}
+
+.footer {
+	margin-right: em($gut);
+	margin-bottom: rhythm($medium-line);
+
+	text-align: right;
+
+	@include adjust-font-size-to($medium-size, $medium-line);
+}
