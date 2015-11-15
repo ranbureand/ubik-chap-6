@@ -1,6 +1,6 @@
-# *Ubik Chap. 6*
+# *Ubik, Chap. 6*
 
-![A screenshot of Ubik / Chap. 6](media/images/ubik_6696.jpg)
+![A screenshot of Ubik, Chap. 6](media/images/ubik_6696.jpg)
 
 *Ubik Chap. 6* is the second proof of concept prototype designed following the principles of [Medlay](http://ranbureand.github.io/medlay/ "Medlay / Hybrid media form concept") and it is based on the very first lines of chapter 6<sup>th</sup> of *Ubik* — a novel by Philp K. Dick.
 
@@ -12,4 +12,4 @@
 
 The source of the dynamic images used in this prototype is the [Prelinger Archives](https://archive.org/details/prelinger "The Prelinger Archives").
 
-Here is a [link to the prototype](http://ranbureand.github.io/ubik-chap-6/ "Ubik / Chap. 6 / Prototype").
+Here is a [link to the prototype](http://ranbureand.github.io/ubik-chap-6/ "Ubik, Chap. 6, prototype").
