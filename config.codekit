@@ -262,6 +262,17 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1
 		},
+	"\/media\/images\/ubik_6696.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 758214,
+		"inputAbbreviatedPath": "\/media\/images\/ubik_6696.jpg",
+		"outputAbbreviatedPath": "\/media\/images\/ubik_6696.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/media\/posters\/01_text_00.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
