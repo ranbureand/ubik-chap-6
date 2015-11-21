@@ -19,7 +19,7 @@ $(document).ready(function() {
     $('.pieces').append('<video class="piece" id="l'+ pId +'" width="'+ pWidth +'" height="'+ pHeight +'" style="top: '+ pY +'px; left: '+ pX +'px;" preload="auto" poster="media/posters/'+ pFile +'.jpg" loop><source src="media/videos/'+ pFile +'.webm" type="video/webm"/><source src="media/videos/'+ pFile +'.mp4" type="video/mp4"/><source src="media/videos/'+ pFile +'.ogv" type="video/ogg"/></video>').hide().fadeIn(250);
   }
 
-  for (var i = 0; i < pieces.length; i++) {
+  for (var i = 0, j = pieces.length; i < j; i += 1) {
     /*(function(i){
 
         window.setTimeout(function(){
@@ -56,11 +56,6 @@ $(document).ready(function() {
           console.log('pause');
         }
 
-        /*if($piece.not(':in-viewport') && $piece[0].paused === false) {
-          $piece[0].pause();
-          console.log('pause');
-        }*/
-
         return this;
       });
     };
@@ -68,78 +63,9 @@ $(document).ready(function() {
 
   setTimeout(function(){ $(".piece").onPlayground(); }, 251);
 
-  /*$(window).scroll(function(){
-      $(".piece").onPlayground();
-  });*/
-
   $(window).on('scrollstop', function() {
     console.log('End of scrolling')
     $(".piece").onPlayground();
   });
-
-  /*$('video')[0].pause( function(){ alert("aloha") });
-
-  $('video:in-viewport')[0].play();
-
-  $(window).scroll(function(){
-      $('video:in-viewport')[0].play();
-      $('video').not('video:in-viewport')[0].pause();
-  });*/
-
-  /*$(".piece:not(:in-viewport)").each(function() {
-    this[0].pause();
-  });*/
-  /*$(".piece:in-viewport( 100 )").each(function() {
-    this[0].play();
-  });*/
-
-  //$('.piece:in-viewport( 100 )')[0].play();
-
-  /*$(".piece:in-viewport( 100 )").each(function() {
-      this[0].play();
-    });*/
-
-  //$('.piece').get(0).pause();
-  //$('.piece:in-viewport').get(0).play();
-  /*$('.piece:in-viewport').each(function() {
-    $this[0].play();
-  });*/
-
-  //console.log("banana");
-
-  /*$(window).scroll(function() {
-    $('.piece:not(:in-viewport)').get(0).pause();
-    $('.piece:in-viewport').get(0).play();
-  });*/
-
-  //alert("banana");
-
-  /*$('#playground').delegate('video', 'click', function() {
-    //alert('banana');
-    $(window).scrollTo($(this), 750, {offset:{left: -xpos, top: -ypos }, easing:"easeOutCubic"});
-    return false;
-  });
-
-  $('.loop').click(function () {
-    $(window).scrollTo($(this), 750, {offset:{left: -xpos, top: -ypos }, easing:"easeOutCubic"});
-    
-    return false;
-  });
-
-  $(".loop:not(:in-viewport)").each(function() {
-    this.pause();
-  });
-  $(".loop:in-viewport").each(function() {
-    this.play();
-  });
-
-  $(window).scroll(function() {
-    $(".loop:not(:in-viewport)").each(function() {
-      this.pause();
-    });
-    $(".loop:in-viewport").each(function() {
-      this.play();
-    });
-  });*/
 
 });
