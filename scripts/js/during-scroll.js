@@ -6,7 +6,7 @@
    * @returns {Number} - a reference to the interval invoked.
    */
   function duringScroll(opts) {
-    var offset = [document.body.scrollTop, document.body.scrollLeft],
+    var offset = [(document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop, (document.documentElement && document.documentElement.scrollLeft) || document.body.scrollLeft],
         state = 'not scrolling',
         noop = function() {},
         default_options = {
@@ -19,20 +19,20 @@
         options = merge_hashes(default_options, opts);
 
     function handle_scrolling(scrollStart, duringScroll, afterScroll) {
-      if(state === 'not scrolling' && offset[0] !== document.body.scrollTop || state === 'not scrolling' && offset[1] !== document.body.scrollLeft) {
+      if(state === 'not scrolling' && offset[0] !== ((document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop) || state === 'not scrolling' && offset[1] !== ((document.documentElement && document.documentElement.scrollLeft) || document.body.scrollLeft)) {
         // we've started scrolling
-        offset[0] = document.body.scrollTop;
-        offset[1] = document.body.scrollLeft;
+        offset[0] = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+        offset[1] = (document.documentElement && document.documentElement.scrollLeft) || document.body.scrollLeft;
         state = 'scrolling';
         scrollStart();
 
-      } else if(state === 'scrolling' && offset[0] !== document.body.scrollTop || state === 'scrolling' && offset[1] !== document.body.scrollLeft) {
+      } else if(state === 'scrolling' && offset[0] !== ((document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop) || state === 'scrolling' && offset[1] !== ((document.documentElement && document.documentElement.scrollLeft) || document.body.scrollLeft)) {
         // we're still scrolling
-        offset[0] = document.body.scrollTop;
-        offset[1] = document.body.scrollLeft;
+        offset[0] = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+        offset[1] = (document.documentElement && document.documentElement.scrollLeft) || document.body.scrollLeft;
         duringScroll();
 
-      } else if(state === 'scrolling' && offset[0] === document.body.scrollTop|| state === 'scrolling' && offset[1] !== document.body.scrollLeft) {
+      } else if(state === 'scrolling' && offset[0] === ((document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop) || state === 'scrolling' && offset[1] !== ((document.documentElement && document.documentElement.scrollLeft) || document.body.scrollLeft)) {
         // we've stopped scrolling
         state = 'not scrolling';
         afterScroll();

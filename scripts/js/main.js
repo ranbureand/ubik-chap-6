@@ -10,10 +10,11 @@
 $(document).ready(function() {
   'use strict';
 
-  var larg = $(window).width();
-  var alt = $(window).height();
-  var xpos = larg / 100 * 20;
-  var ypos = alt / 100 * 20;
+  var larg = $(window).width(),
+  alt = $(window).height(),
+  xpos = larg / 100 * 20,
+  ypos = alt / 100 * 20,
+  piecesLength = pieces.length;
 
   // Function to create a piece
   function createPiece(pId, pFile, pWidth, pHeight, pX, pY) {
@@ -26,7 +27,7 @@ $(document).ready(function() {
   var jPieces = [];
 
   // Assign jQuery objects/pieces to it
-  for (var i = 0, j = pieces.length; i < j; i += 1) {
+  for (var i = 0, j = piecesLength; i < j; i += 1) {
     jPieces.push(createPiece(pieces[i].pId, pieces[i].pFile, pieces[i].pWidth, pieces[i].pHeight, pieces[i].pX, pieces[i].pY));
   }
 
@@ -79,6 +80,14 @@ $(document).ready(function() {
       $(element).togglePiece();
     });
   });
+
+  // Append soundtrack
+  $( '<audio class="audio" id="soundtrack" style="display: none;" preload="auto" loop><source src="media/audios/soundtrack_00.mp3" type="audio/mpeg"/><source src="media/audios/soundtrack_00.ogg" type="audio/ogg"/></audio>' ).appendTo( '.pieces' );
+
+  // Fade in soundtrack
+  $('#soundtrack')[0].volume = 0.0;
+  $('#soundtrack')[0].play();
+  $('#soundtrack').animate({volume: 0.4}, piecesLength*100+8000);
 
   // Scroll to a clicked piece
   $('.piece').on( 'click', function() {
