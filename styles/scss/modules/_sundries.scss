@@ -28,6 +28,10 @@
 	margin-left: em($gut);
 
 	@include adjust-font-size-to($medium-size, $medium-line);
+	&:after {
+		content: "Desktop-only. Click on a piece to scroll.";
+		color: $light-type-color;
+	}
 	h1 {
 		display: inline;
 	}
